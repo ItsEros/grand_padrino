@@ -20,5 +20,5 @@ Once all of the above have done their jobs, you'll be able to run
 padrino start
 ```
 
-and direct your web browser on over to localhost:3000 to see Grand Padrino in action.
+and direct your web browser on over to ```localhost:3000``` to see Grand Padrino in action.
 
