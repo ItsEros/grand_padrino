@@ -1,0 +1,28 @@
+doctype html
+
+html [ lang='en' ]
+  head
+    title Grand Padrino
+
+    meta [ charset='utf-8' ]
+    meta [ name='viewport' content='width=device-width, initial-scale=1.0' ]
+
+    / Stylesheets
+    / -----------------------------------------------------------------------------
+    = stylesheet_link_tag 'bootstrap.min'
+    = stylesheet_link_tag 'bootswatch-superhero.min'
+    = stylesheet_link_tag 'billboard'
+
+    / Javascripts
+    / -----------------------------------------------------------------------------
+    = javascript_include_tag 'jquery.min'
+    = javascript_include_tag 'angular.min'
+    = javascript_include_tag 'bootstrap.min'
+    = javascript_include_tag 'billboard'
+
+body [ ng-app='billboard' ng-controller='BillboardController as bc' ]
+  .container-fluid
+    = partial 'web/header'
+
+    .col-md-10.col-md-offset-1.panel
+      = yield

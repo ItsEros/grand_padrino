@@ -1,0 +1,9 @@
+---
+:orm: sequel
+:test: minitest
+:mock: none
+:script: none
+:renderer: slim
+:stylesheet: sass
+:namespace: GrandPadrino
+:migration_format: timestamp

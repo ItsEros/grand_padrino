@@ -1,0 +1,50 @@
+.col-md-6
+  .well
+    .form-group
+      input.input-lg [ type='text' ng-model='search' placeholder='Search...' style='width:100%;' ]
+
+    table.table.table-hover.table-striped
+      thead
+        tr
+          th Artist
+          th Track
+          th Date Entered
+
+      tbody
+        tr [ ng-repeat='b in bc.billboards | filter:search' ]
+          td
+            strong.text-warning
+              | {{ b.artist }}
+
+          td
+            span.text-info
+              | {{ b.track }}
+            br
+            small
+              | {{ b.genre }}
+
+          td
+            | {{ b.date_entered }}
+
+.col-md-6
+  .well
+    .row
+      .col-md-12
+        input.input-lg [ type='text' ng-model='bc.comment' placeholder='Talk About It...' style='width:100%;' ]
+
+    br
+
+    .row
+      .col-md-12
+        button.btn.btn-info.btn-block [ ng-click='bc.addComment()' ] Add
+
+    hr
+
+    .container-fluid
+      .row [ ng-repeat='c in bc.comments' ]
+        .col-sm-8
+          | {{ c.comment }}
+
+        .col-sm-4
+          small.text-primary
+            | {{ c.created_at }}
